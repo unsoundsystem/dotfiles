@@ -1,0 +1,381 @@
+#[[plugins]]
+#repo = 'autozimu/LanguageClient-neovim' 
+#rev = 'next'
+#build = 'bash install.sh'
+#hook_source = '''source /home/sasuseso/.config/nvim/plugin_config/LanguageClient-neovim.vim'''
+#[[plugins]]
+#repo = 'prabirshrestha/async.vim'
+
+#[[plugins]]
+#repo = 'prabirshrestha/vim-lsp'
+#hook_source = 'source /home/sasuseso/.config/nvim/plugin_config/vim-lsp.vim'
+[[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+hook_add = 'let g:default_julia_version = "1.6"'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+marged = 0
+rev = 'release'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+hook_post_update = ':UpdateRemotePlugins'
+
+#[[plugins]]
+#repo = 'Shougo/defx.nvim'
+#hook_post_update = ':UpdateRemotePlugins'
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+
+#[[plugins]]
+#repo = 'scrooloose/nerdtree'
+#hook_add ='nnoremap <silent><C-e> :NERDTreeToggle<CR>'
+
+[[plugins]]
+repo = 'jpalardy/vim-slime'
+hook_add ='let g:slime_target = "tmux"'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+hook_source = """
+" Change denite default options
+
+call denite#custom#option('default', {
+    \ 'split': 'floating',
+    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+    \ })
+"""
+
+hook_add = """
+let s:denite_win_width_percent = 0.85
+let s:denite_win_height_percent = 0.7
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+endfunction
+"""
+hook_post_update = ':UpdateRemotePlugins'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = 'nmap <F8> :TagbarToggle<CR>'
+
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#hook_add = '''
+#let g:deoplete#enable_at_startup = 1
+#let g:python3_host_prog='/usr/bin/python'
+#'''
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'
+hook_add = """
+let g:airline_theme='iceberg'
+let g:airline_powerline_fonts = 1
+set laststatus=2
+"""
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+
+[[plugins]]
+repo = 'kdheepak/JuliaFormatter.vim'
+hook_add = '''
+" normal mode mapping
+nnoremap <leader>jf :<C-u>call JuliaFormatter#Format(0)<CR>
+" visual mode mapping
+vnoremap <leader>jf :<C-u>call JuliaFormatter#Format(1)<CR>
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+let g:quickrun_config={'*': {'split': ''}}
+set splitbelow
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_linters_explicit = 1
+let g:ale_linters = {'asm' : ['gcc'], 'verilog' : ['verilator'],}
+'''
+
+#[[plugins]]
+#repo = 'tpope/vim-obsession'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+#[[plugins]]
+#repo = 'yuratomo/w3m.vim'
+
+[[plugins]]
+repo = 'fuenor/JpFormat.vim'
+hook_add = 'set formatexpr=jpfmt#formatexpr()'
+
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+hook_add = '''
+let g:floaterm_keymap_toggle = '<F10>'
+let g:floaterm_keymap_new = '<F3>'
+let g:floaterm_position = 'center'
+nmap <silent><F9> :FloatermNew ranger<CR>
+nmap <silent><F6> :FloatermNew lazygit<CR>
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vim-clap'
+
+#[[plugins]]
+#repo = 'Shougo/neosnippet.vim'
+#hook_source = '''
+#let g:neosnippet#snippets_directory='/home/sasuseso/.config/nvim/snippets/'
+#'''
+
+#[[plugins]]
+#repo = 'Shougo/neosnippet-snippets'
+
+# Color Schemes
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'romgrk/doom-one.vim'
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
+
+#[[plugins]]
+#repo = 'skanehira/preview-markdown.vim'
+
+[[plugins]]
+repo = 'chr4/nginx.vim'
+
+[[plugins]]
+repo = "https://github.com/dag/vim-fish.git"
+
+[[plugins]]
+repo = "Yggdroot/indentLine"
+hook_add = "let g:indentLine_char = '▏'"
+
+[[plugins]]
+repo = "rhysd/vim-clang-format"
+hook_add = '''
+let g:clang_format#style_options = {
+            \ "Language" : "Cpp",
+            \ "ColumnLimit" : "100",
+            \ "Standard" : "c++17",
+            \ "BasedOnStyle" : "LLVM",
+            \ "UseTab" : "Always",
+            \ "IndentWidth" : "4",
+            \ "TabWidth" : "4",
+            \ "BreakBeforeBraces" : "Linux",
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "IndentCaseLabels" : "false",
+            \ "AlwaysBreakTemplateDeclarations" : "false",
+            \ "PointerAlignment" : "Right",
+            \ "SpaceBeforeParens" : "ControlStatements",
+            \ "AllowShortFunctionsOnASingleLine" : "None",
+            \ "AccessModifierOffset" : "-4",
+            \ "NamespaceIndentation" : "All",
+            \ "AlwaysBreakAfterReturnType" : "None",
+            \ "PenaltyReturnTypeOnItsOwnLine" : "1000000"
+            \ }
+'''
+
+
+#[[plugins]]
+#repo = "kana/vim-operator-user"
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+
+#[[plugins]]
+#repo = "reireias/vim-cheatsheet"
+#hook_add = """
+
+#let g:cheatsheet#cheat_file = "/home/sasuseso/.config/nvim/cheetsheets/default.md"
+
+#if has('nvim')
+    #let g:cheatsheet#float_window = 1
+    #let g:cheatsheet#float_window_width_ratio = 0.6
+    #let g:cheatsheet#float_window_height_ratio = 0.6
+#endif
+#"""
+#augroup cheatsheet_filetype_hook
+  #autocmd!
+  #"autocmd FileType zsh let g:cheatsheet#cheat_file = '~/.cheatsheet-zsh.md'
+#augroup END
+#"""
+
+[[plugins]]
+repo = "qnighy/satysfi.vim"
+
+[[plugins]]
+repo = "vim-latex/vim-latex"
+
+[[plugins]]
+repo = "idris-hackers/idris-vim"
+
+[[plugins]]
+repo = "mbbill/undotree"
+hook_add = """
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 1
+endif
+nnoremap <F5> :UndotreeToggle<cr>
+"""
+
+[[plugins]]
+repo = "simeji/winresizer"
+hook_add = """
+let g:winresizer_start_key = '<C-S>z'
+"""
+
+[[plugins]]
+repo = "alvan/vim-closetag"
+hook_add = """
+let g:closetag_filenames = "*.html,*.vue,*.xml,*.ts,*.tsx,*.js,*.jsx"
+"""
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+let g:startify_custom_header = [
+    \'    _   __         _    ___         ',
+    \'   / | / /__  ____| |  / (_)___ ___ ',
+    \'  /  |/ / _ \/ __ \ | / / / __ `__ \',
+    \' / /|  /  __/ /_/ / |/ / / / / / / /',
+    \'/_/ |_/\___/\____/|___/_/_/ /_/ /_/ ',
+\]
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround.git'
+
+#[[plugins]]
+#repo = 'kyazdani42/nvim-web-devicons'
+#[[plugins]]
+#repo = 'romgrk/barbar.nvim'
+
+[[plugins]]
+repo = 'deton/jasegment.vim'
+
+[[plugins]]
+repo = 'voldikss/fzf-floaterm'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+merged = 0
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+let g:fern#renderer = "nerdfont"
+let g:fern#renderer#default#leading = "│"
+let g:fern#renderer#default#root_symbol = "┬ "
+let g:fern#renderer#default#leaf_symbol = "├─ "
+let g:fern#renderer#default#collapsed_symbol = "├─ "
+let g:fern#renderer#default#expanded_symbol = "├┬ "
+nnoremap <silent><C-e> :Fern . -drawer -width=35 -toggle<CR>
+function! s:init_fern() abort
+  " Use 'select' instead of 'edit' for default 'open' action
+  nmap <buffer> S <Plug>(fern-action-open:split)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+'''
+
+[[plugins]]
+repo = 'antoinemadec/FixCursorHold.nvim'
+
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+
+[[plugins]]
+repo = "unsoundsystem/coqpit.vim"
+hook_add = '''
+let g:coqpit_auto_launch=1
+nnoremap <C-c><C-i> :CoqToCursor<CR>
+nnoremap <C-c><C-u> :CoqBack<CR>
+nnoremap <C-c><C-n> :CoqNext<CR>
+'''
+
+[[plugins]]
+repo = "segeljakt/vim-silicon"
+
+#[[plugins]]
+#repo = "mattn/vim-gist"
+
+#[[plugins]]
+#repo = "eagletmt/coqtop-vim"
+
+#[[plugins]]
+#repo = "mattn/webapi-vim"
+
+[[plugins]]
+repo = 'sbdchd/neoformat'
+
+#[[plugins]]
+#repo = 'sheerun/vim-polyglot'
+#hook_source = '''
+#let g:polyglot_disabled = []
+#'''
+
+#[[plugins]]
+#repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'henriquehbr/nvim-startup.lua'
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'sainnhe/sonokai'
