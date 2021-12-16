@@ -1,3 +1,13 @@
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
+
 #[[plugins]]
 #repo = 'autozimu/LanguageClient-neovim' 
 #rev = 'next'
@@ -124,9 +134,6 @@ let g:ale_linters = {'asm' : ['gcc'], 'verilog' : ['verilator'],}
 
 #[[plugins]]
 #repo = 'tpope/vim-obsession'
-
-[[plugins]]
-repo = 'junegunn/fzf.vim'
 
 #[[plugins]]
 #repo = 'yuratomo/w3m.vim'
@@ -339,15 +346,6 @@ repo = 'lambdalisue/glyph-palette.vim'
 repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
-repo = "unsoundsystem/coqpit.vim"
-hook_add = '''
-let g:coqpit_auto_launch=1
-nnoremap <C-c><C-i> :CoqToCursor<CR>
-nnoremap <C-c><C-u> :CoqBack<CR>
-nnoremap <C-c><C-n> :CoqNext<CR>
-'''
-
-[[plugins]]
 repo = "segeljakt/vim-silicon"
 
 #[[plugins]]
@@ -379,3 +377,69 @@ repo = 'morhetz/gruvbox'
 
 [[plugins]]
 repo = 'sainnhe/sonokai'
+
+[[plugins]]
+repo = 'joom/latex-unicoder.vim'
+hook_add = '''
+    let g:unicoder_cancel_normal = 1
+    let g:unicoder_cancel_insert = 1
+    let g:unicoder_cancel_visual = 1
+    nnoremap <C-l> :call unicoder#start(0)<CR>
+    inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
+    vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
+
+    let g:unicode_map = {
+      \ "\\fun"     :   "λ",
+      \ "\\mult"    :   "⋅",
+      \ "\\ent"     :   "⊢",
+      \ "\\valid"   :   "✓",
+      \ "\\diamond" :   "◇",
+      \ "\\box"     :   "□",
+      \ "\\bbox"   	:   "■",
+      \ "\\later"  	:   "▷",
+      \ "\\pred"   	:   "φ",
+      \ "\\and"    	:   "∧",
+      \ "\\or"     	:   "∨",
+      \ "\\comp"   	:   "∘",
+      \ "\\ccomp"  	:   "◎",
+      \ "\\all"    	:   "∀",
+      \ "\\ex"     	:   "∃",
+      \ "\\to"     	:   "→",
+      \ "\\sep"    	:   "∗",
+      \ "\\lc"     	:   "⌜",
+      \ "\\rc"     	:   "⌝",
+      \ "\\Lc"     	:   "⎡",
+      \ "\\Rc"     	:   "⎤",
+      \ "\\lam"    	:   "λ",
+      \ "\\empty"  	:   "∅",
+      \ "\\Lam"    	:   "Λ",
+      \ "\\Sig"    	:   "Σ",
+      \ "\\-"      	:   "∖",
+      \ "\\aa"     	:   "●",
+      \ "\\af"     	:   "◯",
+      \ "\\auth"   	:   "●",
+      \ "\\frag"   	:   "◯",
+      \ "\\iff"    	:   "↔",
+      \ "\\gname"  	:   "γ",
+      \ "\\incl"   	:   "≼",
+      \ "\\latert" 	:   "▶",
+      \ "\\update" 	:   "⇝",
+      \ "\\\"o"     :   "ö",
+      \ "_a"        :   "ₐ",
+      \ "_e"        :   "ₑ",
+      \ "_h"        :   "ₕ",
+      \ "_i"        :   "ᵢ",
+      \ "_k"        :   "ₖ",
+      \ "_l"        :   "ₗ",
+      \ "_m"        :   "ₘ",
+      \ "_n"        :   "ₙ",
+      \ "_o"        :   "ₒ",
+      \ "_p"        :   "ₚ",
+      \ "_r"        :   "ᵣ",
+      \ "_s"        :   "ₛ",
+      \ "_t"        :   "ₜ",
+      \ "_u"        :   "ᵤ",
+      \ "_v"        :   "ᵥ",
+      \ "_x"        :   "ₓ",
+    \ }
+'''

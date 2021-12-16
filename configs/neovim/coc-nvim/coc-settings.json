@@ -1,0 +1,91 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "./build/compile_commands.json",
+                "compile_commands.json",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        " haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": [
+                "--lsp"
+            ],
+            "rootPatterns": [
+                "hie.yaml",
+                "*.cabal",
+                "stack.yaml",
+                "cabal.project",
+                "package.yaml"
+            ],
+            "filetypes": [
+                "hs",
+                "lhs",
+                "haskell"
+            ],
+            "initializationOptions": {
+                "haskell": {}
+            }
+        },
+        "ocaml-lsp": {
+            "command": "ocamllsp",
+            "filetypes": [
+                "ocaml",
+                "reason"
+            ]
+        },
+        "nix": {
+            "command": "rnix-lsp",
+            "filetypes": [
+                "nix"
+            ]
+        },
+        "isabelle": {
+            "command": "isabelle",
+            "args": [
+                "vscode_server"
+            ],
+            "filetypes": [
+                "isabelle"
+            ]
+        },
+        "dhall": {
+            "command": "dhall-lsp-server",
+            "filetypes": [
+                "dhall"
+            ]
+        }
+    },
+    "suggest.autoTrigger": "always",
+    "rust.clippy_preference": "on",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "scala",
+        "css",
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact",
+        "rust",
+        "bash",
+        "json",
+        "markdown"
+    ],
+    "prettier.useTabs": true
+}

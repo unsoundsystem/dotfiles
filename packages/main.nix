@@ -13,6 +13,10 @@
     gcc
     mendeley
     jdk
+    zathura
+    baobab
+    vscode
+    xfce.thunar
 
     # Terminal Emulator
     alacritty
@@ -40,6 +44,11 @@
     file
     vagrant
     hub
+    ripgrep
+    jq
+    trash-cli
+    ctags
+    gh
 
     # Fonts
     iosevka
@@ -51,9 +60,14 @@
 
     # Games
     minecraft
+    steam
+    multimc
 
     # IDE
     jetbrains.idea-community
+
+    # Chat
+    element-desktop
   ];
 }
 

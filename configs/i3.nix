@@ -40,6 +40,8 @@
         "${modifier}+Shift+minus" = "move scratchpad";
         "${modifier}+minus" = "scratchpad show";
         "${modifier}+x" = "[floating] move scratchpad";
+        "${modifier}+i" = "exec alacritty -e 'ranger'";
+        "${modifier}+t" = "exec alacritty -e 'bpytop'";
       };
 
       startup = [

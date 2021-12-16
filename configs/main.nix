@@ -4,6 +4,7 @@
   imports = [
     ./i3.nix
     ./neovim/neovim.nix
+    ./xdg.nix
   ];
 
   programs = {
