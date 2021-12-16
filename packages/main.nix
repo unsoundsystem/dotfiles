@@ -17,9 +17,10 @@
     baobab
     vscode
     xfce.thunar
+    picom
 
     # Terminal Emulator
-    alacritty
+    kitty
 
     # Browser
     firefox
@@ -57,6 +58,7 @@
     ibm-plex
     ipafont
     hack-font
+    rictydiminished-with-firacode
 
     # Games
     minecraft

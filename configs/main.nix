@@ -5,6 +5,9 @@
     ./i3.nix
     ./neovim/neovim.nix
     ./xdg.nix
+    ./alacritty.nix
+    ./picom.nix
+    ./rofi.nix
   ];
 
   programs = {
