@@ -7,7 +7,7 @@
       rofi-power-menu
       rofi-emoji
     ];
-    font = "Iosevka Medium 14";
+    font = "JetBrainsMono Nerd Font 14";
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = "gruvbox-dark";
     extraConfig = {

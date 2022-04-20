@@ -31,12 +31,11 @@
 
         if dein#load_state('/home/unsoundsystem/.cache/.dein')
             call dein#begin('/home/unsoundsystem/.cache/.dein')
-            call dein#load_toml('${./plugins/dein.toml}', {'lazy': 0})
-            call dein#load_toml('${./plugins/dein_lazy.toml}', {'lazy': 1})
+            call dein#load_toml('${./plugins}/dein.toml', {'lazy': 0})
+            call dein#load_toml('${./plugins}/dein_lazy.toml', {'lazy': 1})
             call dein#end()
             call dein#save_state()
         endif
-
 
         " Required:
         filetype plugin indent on
@@ -57,18 +56,22 @@
       ''
       (lib.strings.fileContents ./init.vim)
     ];
+
     viAlias = true;
     vimAlias = true;
     package = pkgs.neovim-nightly;
 
     extraPackages = (with pkgs; [
-      rnix-lsp isabelle
+      rnix-lsp # isabelle
       haskell-language-server ccls 
       fzf ripgrep-all
-      ag perl ctags ocamlformat
-      dhall-lsp-server
+      silver-searcher perl ctags ocamlformat
+      dhall-lsp-server python39
+      metals xclip xsel
     ])
     ++ (with pkgs.ocamlPackages;
-      [ ocaml-lsp merlin ]);
+        [ ocaml-lsp merlin ])
+    ++ (with pkgs.nodePackages;
+        [ purescript-language-server ]);
   };
 }

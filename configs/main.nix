@@ -6,14 +6,21 @@
     ./neovim/neovim.nix
     ./xdg.nix
     ./alacritty.nix
-    ./picom.nix
+    #./picom.nix
     ./rofi.nix
+    ./dunst.nix
+    #./polybar.nix
   ];
 
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
+    git = {
+      enable = true;
+      ignores = [ "*~" "*.swp" ];
+    };
+ 
 
     fish = {
       enable = true;
@@ -100,6 +107,8 @@
         set-option -g history-limit 100000
       '';
     };
+
+    #opam.enable = true;
   };
 
   i18n.inputMethod = {

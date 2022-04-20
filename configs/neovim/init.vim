@@ -5,7 +5,7 @@
 set background=dark
 set nopaste
 set nu rnu
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set hidden
 set nobackup
 set tags=./tags;,tags;
@@ -21,10 +21,6 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set undofile
 set splitbelow
 nn tn :tabnew 
-nn <C-i><C-i> :source ~/.vimrc<CR><Esc> 
-nn <C-o><C-o> :e ~/.vimrc<CR><Esc> 
-nn <C-b><C-b> :bn<CR><Esc>
-nn <C-b><C-p> :bp<CR><Esc>
 let mapleader = " "
 tnoremap <C-T><C-N> <C-\><C-n>
 
@@ -81,6 +77,7 @@ augroup vimrc
     au BufNewFile,BufRead *.lds setfiletype ld
     au BufNewFile,BufRead *.nasm setfiletype nasm
     au BufNewFile,BufRead *.ino setfiletype arduino
+    au BufNewFile,BufRead *.smi setfiletype sml
     "au BufNewFile,BufRead *.v setfiletype verilog
     au BufNewFile,BufRead *.v set ft=coq
     au BufNewFile,BufRead *.fs setfiletype fsharp
@@ -92,3 +89,6 @@ augroup vimrc
     au BufNewFile,BufRead *.c,*.cpp,*.cxx,*.h,*.hpp setlocal noexpandtab ts=4 shiftwidth=4
     au BufNewFile,BufRead *.ts setlocal ts=2 shiftwidth=2
 augroup END
+
+"Utilities
+command Config :cd ~/.config/nixpkgs/configs/neovim | :e init.vim

@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
 
-    git
     feh
     arandr
     nodejs
@@ -12,15 +11,18 @@
     rustup
     gcc
     mendeley
-    jdk
+    #jdk
     zathura
     baobab
     vscode
     xfce.thunar
-    picom
+    #picom
+    wireshark
+    #wireshark-cli
 
     # Terminal Emulator
     kitty
+    st
 
     # Browser
     firefox
@@ -50,6 +52,9 @@
     trash-cli
     ctags
     gh
+    navi
+    xclip
+    xsel
 
     # Fonts
     iosevka
@@ -63,13 +68,15 @@
     # Games
     minecraft
     steam
-    multimc
+    polymc
 
     # IDE
     jetbrains.idea-community
+    #oni2
 
     # Chat
     element-desktop
+    discord
   ];
 }
 

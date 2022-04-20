@@ -11,7 +11,8 @@
       };
 
       keybindings = lib.mkOptionDefault {
-        "${modifier}+Return" = "exec alacritty";
+        #"${modifier}+Return" = "exec alacritty";
+        "${modifier}+Return" = "exec kitty";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+h" = "focus left";
         "${modifier}+j" = "focus down";
@@ -44,6 +45,8 @@
         "${modifier}+t" = "exec alacritty -e 'bpytop'";
         "${modifier}+d" = "exec rofi -show";
       };
+
+      #bars = [];
 
       startup = [
         {

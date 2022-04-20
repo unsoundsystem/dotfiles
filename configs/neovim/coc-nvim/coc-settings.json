@@ -71,6 +71,26 @@
             "filetypes": [
                 "dhall"
             ]
+        },
+        "purescript": {
+            "command": "purescript-language-server",
+            "args": [
+                "--stdio"
+            ],
+            "filetypes": [
+                "purescript"
+            ],
+            "trace.server": "off",
+            "rootPatterns": [
+                "bower.json",
+                "psc-package.json",
+                "spago.dhall"
+            ],
+            "settings": {
+                "purescript": {
+                    "addSpagoSources": true
+                }
+            }
         }
     },
     "suggest.autoTrigger": "always",
@@ -85,7 +105,8 @@
         "rust",
         "bash",
         "json",
-        "markdown"
+        "markdown",
+        "purescript"
     ],
     "prettier.useTabs": true
 }
