@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ env, pkgs, lib, ... }:
 {
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {

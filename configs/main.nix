@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ env, config, pkgs, lib, ... }:
 
 {
   imports = [
-    ./i3.nix
-    ./neovim/neovim.nix
-    ./xdg.nix
-    ./alacritty.nix
+    (./i3.nix env)
+    (./neovim/neovim.nix env)
+    (./xdg.nix env)
+    (./alacritty.nix env)
     #./picom.nix
-    ./rofi.nix
-    ./dunst.nix
+    (./rofi.nix env)
+    (./dunst.nix env)
     #./polybar.nix
   ];
 

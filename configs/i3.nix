@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ env, pkgs, lib, ... }: {
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;

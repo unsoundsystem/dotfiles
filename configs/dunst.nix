@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ env, pkgs, ... }:
 {
   services.dunst = {
     enable = true;

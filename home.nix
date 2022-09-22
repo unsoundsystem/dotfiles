@@ -16,6 +16,12 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.11";
+  env = (imoprt ./install_env.nix);
+  # write in install_env.nix at toplevel
+  #{
+    #nixos-desktop = false;
+    #archlinux-desktop = true;
+  #};
 
-  imports = [ ./configs/main.nix ./packages/main.nix ];
+  imports = [ (./configs/main.nix env) (./packages/main.nix env) ];
 }

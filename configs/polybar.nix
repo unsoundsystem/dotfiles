@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ env, pkgs, ... }:
 {
   services.polybar = {
     package = pkgs.polybar.override {
