@@ -1,4 +1,4 @@
-{ env, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 {
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {

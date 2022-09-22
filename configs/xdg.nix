@@ -1,4 +1,4 @@
-{ env, config, pkgs, ... }:
+{ config, pkgs, ... }:
 {
 
   xdg.mimeApps = {
