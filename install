@@ -1,3 +1,4 @@
+echo "running as $USER"
 # install Nix with single user mode
 curl -L https://nixos.org/nix/install > install-nix.sh
 chmod +x ./install-nix.sh
