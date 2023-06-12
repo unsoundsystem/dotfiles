@@ -1,9 +1,15 @@
-echo "running as $USER"
-# install Nix with single user mode
-curl -L https://nixos.org/nix/install > install-nix.sh
-chmod +x ./install-nix.sh
-./install-nix.sh --daemon --yes
-. ~/.nix-profile/etc/profile.d/nix-daemon.sh
+#
+# Installation script for open devcontainer
+#
+
+nix --version
+if [ $? = 0 ]; then
+    # install Nix with single user mode
+    curl -L https://nixos.org/nix/install > install-nix.sh
+    chmod +x ./install-nix.sh
+    ./install-nix.sh --daemon --yes
+    . ~/.nix-profile/etc/profile.d/nix-daemon.sh
+fi
 # install home-manager
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
@@ -22,5 +28,3 @@ else
 fi
 
 home-manager switch
-
-
