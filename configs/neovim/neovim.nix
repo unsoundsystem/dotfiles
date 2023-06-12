@@ -8,6 +8,8 @@
 
   programs.neovim = {
     enable = true;
+    withPython3 = true;
+    withNodeJs = true;
     extraConfig = builtins.concatStringsSep "\n" [
       ''
         "Dein 
@@ -73,5 +75,7 @@
         [ ocaml-lsp merlin ])
     ++ (with pkgs.nodePackages;
         [ purescript-language-server ]);
+
+    extraPython3Packages = (ps: with ps; [ pynvim ]);
   };
 }

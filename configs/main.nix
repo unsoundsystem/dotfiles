@@ -1,17 +1,20 @@
 { config, pkgs, lib, ... }:
 
+let env = import ../install_env.nix; in
+let add_list_if = x: ls: if x then ls else []; in
+let add_str_if = x: str: if x then str else ''''; in
 {
-  imports = [
-    ./i3.nix
-    ./neovim/neovim.nix
-    ./xdg.nix
-    ./alacritty.nix
-    #./picom.nix
-    ./rofi.nix
-    ./dunst.nix
-    #./polybar.nix
-  ];
+  imports = (add_list_if (!env.archlinux-desktop) [ ./i3.nix ./alacritty.nix ])
+    ++ [
+      ./neovim/neovim.nix
+      ./xdg.nix
+      #./picom.nix
+      ./rofi.nix
+      ./dunst.nix
+      #./polybar.nix
+    ];
 
+  fonts.fontconfig.enable = true;
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -34,11 +37,30 @@
             sha256 = "0cv7jpvdfdha4hrnjr887jv1pc6vcrxv2ahy7z6x562y7fd77gg9";
           };
         }
+        {
+          name = "plugin-foreign-env";
+          src = pkgs.fetchFromGitHub {
+            owner = "oh-my-fish";
+            repo = "plugin-foreign-env";
+            rev = "b3dd471bcc885b597c3922e4de836e06415e52dd";
+            sha256 = "3h03WQrBZmTXZLkQh1oVyhv6zlyYsSDS7HTHr+7WjY8=";
+          };
+        }
       ];
 
       shellInit =
         ''
           set fish_greeting
+          fish_vi_key_bindings
+          fenv source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+          set PATH $PATH /home/unsoundsystem/.nix-profile/bin
+          direnv hook fish | source
+        '' + add_str_if (env.archlinux-desktop)
+        ''
+        source /usr/share/doc/find-the-command/ftc.fish
+
+        # opam configuration
+        source /home/unsoundsystem/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
         '';
     };
 
@@ -109,6 +131,11 @@
     };
 
     #opam.enable = true;
+
+    direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+    };
   };
 
   i18n.inputMethod = {

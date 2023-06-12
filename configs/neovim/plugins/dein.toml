@@ -1,11 +1,11 @@
-[[plugins]]
-repo = 'junegunn/fzf'
-build = './install --all'
-merged = 0
+ [[plugins]]
+ repo = 'junegunn/fzf'
+ build = './install --all'
+ merged = 0
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
-depends = 'fzf'
+# depends = 'fzf'
 
 
 #[[plugins]]
@@ -446,3 +446,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'whonore/Coqtail'
+
+[[plugins]]
+repo = 'earthly/earthly.vim'

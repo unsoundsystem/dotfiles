@@ -1,15 +1,16 @@
 { config, pkgs, ... }:
 
+let env = import ../install_env.nix; in
+let add_list_if = x: ls: if x then ls else []; in
 {
   home.packages = with pkgs; [
 
+    python310
     feh
     arandr
     nodejs
     arion
     docker-client
-    rustup
-    gcc
     mendeley
     #jdk
     zathura
@@ -34,14 +35,13 @@
     
     # CLI Utilities
     ghq
-    direnv
     fzf
     neofetch
     tree
     htop
-    bpytop
+    btop
     duf
-    dust
+    du-dust
     bat
     ranger
     file
@@ -59,7 +59,7 @@
     # Fonts
     iosevka
     monoid
-    nerdfonts
+    #nerdfonts
     ibm-plex
     ipafont
     hack-font
@@ -68,15 +68,16 @@
     # Games
     minecraft
     steam
-    polymc
+    #polymc
 
     # IDE
     jetbrains.idea-community
     #oni2
+    neovide
 
     # Chat
     element-desktop
     discord
-  ];
+  ] ++ (add_list_if (!env.archlinux-desktop) (with pkgs;[ rustup gcc ]));
 }
 

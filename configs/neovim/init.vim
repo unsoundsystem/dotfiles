@@ -86,6 +86,8 @@ augroup vimrc
     au BufNewFile,BufRead *.agda setfiletype agda
     au BufNewFile,BufRead *.purs setfiletype purescript
     au BufNewFile,BufRead *.dhall setfiletype dhall
+    au BufRead,BufNewFile Earthfile set filetype=Earthfile
+    au BufRead,BufNewFile build.earth set filetype=Earthfile
     au BufNewFile,BufRead *.c,*.cpp,*.cxx,*.h,*.hpp setlocal noexpandtab ts=4 shiftwidth=4
     au BufNewFile,BufRead *.ts setlocal ts=2 shiftwidth=2
 augroup END

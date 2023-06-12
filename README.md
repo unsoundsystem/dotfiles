@@ -1,6 +1,5 @@
-- add following lines in home.nix
+- add a file named install_env.nix with following contents
 
 ```
-env = { nixos-desktop = false; archlinux-desktop = true; };
-imports = [ (./configs/main.nix env) (./packages/main.nix env) ];
+{ nixos-desktop = false; archlinux-desktop = true; }
 ```
