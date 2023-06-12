@@ -11,8 +11,13 @@ nix-shell '<home-manager>' -A install
 CONFIG_SRC=$(dirname "$0")
 CONFIG_DIST=$HOME/.config/nixpkgs
 cp -r $CONFIG_SRC $CONFIG_DIST
-sed -i '$d' $CONFIG_DIST/home.nix
-echo -e "  imports = [ ./packages/main.nix ./configs/main.nix ];\n}" >> $CONFIG_DIST/home.nix
+HOME_NIX_PATH=$HOME/.config/home-manager/home.nix
+if [-e $HOME_NIX_PATH ]; then
+    sed -i '$d' 
+    echo -e "  imports = [ ./packages/main.nix ./configs/main.nix ];\n}" >> $CONFIG_DIST/home.nix
+else
+    echo "$HOME_NIX_PATH doesn't exist. failed to add custom settings."
+fi
 
 home-manager switch
 
