@@ -1,7 +1,8 @@
 # install Nix with single user mode
 curl -L https://nixos.org/nix/install > install-nix.sh
 chmod +x ./install-nix.sh
-./install-nix.sh --no-daemon
+./install-nix.sh --daemon --yes
+source ~/.nix-profile/etc/profile.d/nix-daemon.sh
 # install home-manager
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
@@ -14,3 +15,4 @@ sed -i '$d' $CONFIG_DIST/home.nix
 echo -e "  imports = [ ./packages/main.nix ./configs/main.nix ];\n}" >> $CONFIG_DIST/home.nix
 
 home-manager switch
+
