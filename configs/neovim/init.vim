@@ -23,6 +23,7 @@ set splitbelow
 nn tn :tabnew 
 let mapleader = " "
 tnoremap <C-T><C-N> <C-\><C-n>
+set cursorline
 
 set undodir=~/.config/nvim/undo
 set viminfo+='1000,\"1000,s1000,:1000,n~/.config/nvim/viminfo

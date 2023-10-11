@@ -66,9 +66,10 @@
     extraPackages = (with pkgs; [
       rnix-lsp # isabelle
       haskell-language-server ccls 
-      fzf ripgrep-all
+      fzf ripgrep
       silver-searcher perl ctags ocamlformat
-      dhall-lsp-server python39
+      #dhall-lsp-server
+      python39
       metals xclip xsel
     ])
     ++ (with pkgs.ocamlPackages;

@@ -21,7 +21,9 @@ let add_str_if = x: str: if x then str else ''''; in
 
     git = {
       enable = true;
-      ignores = [ "*~" "*.swp" ];
+      ignores = [ "*~" "*.swp" "result" ];
+      userEmail = "unsoundsystem@protonmail.com";
+      userName = "unsoundsystem";
     };
  
 

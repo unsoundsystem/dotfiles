@@ -5,13 +5,16 @@ let add_list_if = x: ls: if x then ls else []; in
 {
   home.packages = with pkgs; [
 
-    python310
+    #earthly
+    clang-tools
+    kubectl
+    krew
     feh
     arandr
     nodejs
     arion
     docker-client
-    mendeley
+    #mendeley
     #jdk
     zathura
     baobab
@@ -39,6 +42,7 @@ let add_list_if = x: ls: if x then ls else []; in
     neofetch
     tree
     htop
+    iotop
     btop
     duf
     du-dust
@@ -60,14 +64,14 @@ let add_list_if = x: ls: if x then ls else []; in
     iosevka
     monoid
     #nerdfonts
-    ibm-plex
+    #ibm-plex
     ipafont
     hack-font
     rictydiminished-with-firacode
 
     # Games
-    minecraft
-    steam
+    #minecraft
+    #steam
     #polymc
 
     # IDE
