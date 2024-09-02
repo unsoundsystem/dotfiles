@@ -446,6 +446,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'whonore/Coqtail'
+hook_source = '''
+g:coqtail_dune_compile_deps = 1
+'''
 
 [[plugins]]
 repo = 'earthly/earthly.vim'
