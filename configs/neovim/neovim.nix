@@ -50,6 +50,10 @@
 
         "coc.nvim config directory
         let g:coc_config_home = '${./coc-nvim}'
+
+        "ultisnips
+        
+        let g:UltiSnipsSnippetDirectories=['${./ultisnips}']
       ''
 
       (lib.strings.fileContents ./init.vim)
@@ -61,6 +65,7 @@
 
     extraPackages = (with pkgs; [
       # rnix-lsp isabelle
+      nil
       haskell-language-server ccls 
       fzf ripgrep
       silver-searcher perl ctags ocamlformat

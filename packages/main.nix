@@ -61,7 +61,7 @@ let add_list_if = x: ls: if x then ls else []; in
     xsel
 
     # Fonts
-    iosevka
+    #iosevka
     monoid
     #nerdfonts
     #ibm-plex

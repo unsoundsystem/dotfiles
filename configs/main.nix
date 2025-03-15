@@ -146,4 +146,5 @@ let add_str_if = x: str: if x then str else ''''; in
   };
 
   xsession.enable = true;
+
 }
